@@ -56,6 +56,7 @@ create table [Order]
 (
 	OrderID int primary key identity,
 	OrderNumber int not null,
+	OrderСontents nvarchar(max) not null,
 	OrderDate datetime not null,
 	OrderDeliveryDate datetime not null,
 	OrderPickupPoint int foreign key references [PickupPoint](PickupPointID) not null,
@@ -107,8 +108,7 @@ create table Product
 	ProductCategory int foreign key references [Category](CategoryID) not null,
 	ProductDiscountAmount tinyint null,
 	ProductQuantityInStock int not null,
-	ProductPhoto image not null,
-	ProductStatus nvarchar(max) not null,
+	ProductPhoto image null,
 )
 go
 create table OrderProduct
