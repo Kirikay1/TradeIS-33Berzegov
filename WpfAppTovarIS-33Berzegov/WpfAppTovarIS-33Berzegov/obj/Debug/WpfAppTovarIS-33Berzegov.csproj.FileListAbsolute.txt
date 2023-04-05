@@ -1,0 +1,16 @@
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\WpfAppTovarIS-33Berzegov.exe.config
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\WpfAppTovarIS-33Berzegov.exe
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\WpfAppTovarIS-33Berzegov.pdb
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.AssemblyReference.cache
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.SuggestedBindingRedirects.cache
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\MainWindow.g.cs
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\App.g.cs
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov_MarkupCompile.cache
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov_MarkupCompile.lref
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\MainWindow.baml
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.g.resources
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS_33Berzegov.Properties.Resources.resources
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.GenerateResource.cache
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.CoreCompileInputs.cache
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.exe
+D:\IS-33\Berzegov_Maksim\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.pdb
