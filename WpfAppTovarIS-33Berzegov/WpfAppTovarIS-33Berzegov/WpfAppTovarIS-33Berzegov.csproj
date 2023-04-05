@@ -47,6 +47,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\TovarApplicationWindow.xaml.cs">
+      <DependentUpon>TovarApplicationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,12 +78,77 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\DataBase\ConnectDB.cs" />
+    <Compile Include="Model\DataBase\Category.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\City.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Info.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Manufacturer.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\MeasurementUnit.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Order.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\PickupPoint.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Product.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Provider.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Role.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Status.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Street.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\sysdiagrams.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\Tovar.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\TradeIS-33BerzegovModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeIS-33BerzegovModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\TradeIS-33BerzegovModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\TradeIS-33BerzegovModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataBase\User.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AuthVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\TovarApplicationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -98,6 +168,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\DataBase\TradeIS-33BerzegovModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TradeIS-33BerzegovModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\DataBase\TradeIS-33BerzegovModel.edmx.diagram">
+      <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,14 +184,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\DataBase\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\DataBase\TradeIS-33BerzegovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TradeIS-33BerzegovModel.Context.cs</LastGenOutput>
+      <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\DataBase\TradeIS-33BerzegovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
+      <LastGenOutput>TradeIS-33BerzegovModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

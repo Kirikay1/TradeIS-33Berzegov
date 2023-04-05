@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e7086bc1da64810942965fa2fac6700" Name="Diagram1">
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Category" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.City" Width="1.5" PointX="1.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Info" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Manufacturer" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.MeasurementUnit" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Order" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.PickupPoint" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Product" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Provider" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Role" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Status" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Street" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.Tovar" Width="1.5" PointX="6" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeIS_33BerzegovModel.User" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Product__Product__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__PickupPoin__City__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Order__OrderInfo__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__User__UserInfo__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Product__Product__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Product__Product__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Order__OrderPick__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Order__OrderStat__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__PickupPoi__Stree__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Product__Product__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__Product__Product__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.FK__User__UserRole__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeIS_33BerzegovModel.OrderProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

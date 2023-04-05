@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppTovarIS_33Berzegov.Model;
+using WpfAppTovarIS_33Berzegov.ViewModel;
 
 namespace WpfAppTovarIS_33Berzegov
 {
@@ -23,6 +25,14 @@ namespace WpfAppTovarIS_33Berzegov
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new AuthVM();
+        }
+
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+                (DataContext as AuthVM).Password = TxbPassword.Password;
+                (DataContext as AuthVM).Auntification();
         }
     }
 }
