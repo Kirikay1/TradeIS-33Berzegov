@@ -60,7 +60,7 @@ namespace WpfAppTovarIS_33Berzegov.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Необработанное исключение",
+                MessageBox.Show(ex.Message, "Ошибка",
                         MessageBoxButton.OK, MessageBoxImage.Stop);
 
                 return false;
