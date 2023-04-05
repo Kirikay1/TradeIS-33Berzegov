@@ -35,6 +35,15 @@ namespace WpfAppTovarIS_33Berzegov.ViewModel
                 OnPropertyChanged(nameof(Login));
             }
         }
+        public User User
+        {
+            get => _user;
+            set
+            {
+                _user = value;
+                OnPropertyChanged(nameof(User));
+            }
+        }
 
         private async Task<bool> Validation(string login, string password)
         {
@@ -46,8 +55,8 @@ namespace WpfAppTovarIS_33Berzegov.ViewModel
 
                 if (result != null)
                     return true;
-                return false;
-
+                else
+                    return false;
             }
             catch (Exception ex)
             {
@@ -74,7 +83,8 @@ namespace WpfAppTovarIS_33Berzegov.ViewModel
                 }
                 return;
             }
-            MessageBox.Show("Неверный логин или пароль", "Ошибка..", MessageBoxButton.OK, MessageBoxImage.Stop);
+            else
+                MessageBox.Show("Неверный логин или пароль", "Ошибка..", MessageBoxButton.OK, MessageBoxImage.Stop);
         }
     }
 }

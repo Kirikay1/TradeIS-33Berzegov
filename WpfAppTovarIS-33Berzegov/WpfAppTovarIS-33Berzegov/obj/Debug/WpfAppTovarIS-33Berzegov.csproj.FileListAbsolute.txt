@@ -75,3 +75,11 @@ D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovar
 D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov_Content.g.cs
 D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.g.cs
 D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.baml
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\EntityFramework.dll
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\EntityFramework.xml
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.g.cs
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov_Content.g.cs
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.baml
+C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.CopyComplete
