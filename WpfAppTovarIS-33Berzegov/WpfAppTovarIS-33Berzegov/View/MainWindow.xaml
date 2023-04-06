@@ -8,7 +8,7 @@
         ResizeMode="CanMinimize"
         FontFamily="Comic Sans MS"
         Icon="\Resources\icon.ico"
-        Title="Авторизация" Height="420" Width="400" WindowStartupLocation="CenterScreen" MinHeight="350" MinWidth="350">
+        Title="Авторизация" Height="420" Width="400" WindowStartupLocation="CenterScreen" MinHeight="420" MinWidth="400">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

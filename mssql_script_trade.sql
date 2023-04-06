@@ -56,7 +56,7 @@ create table [Order]
 (
 	OrderID int primary key identity,
 	OrderNumber int not null,
-	Order–°ontents nvarchar(max) not null,
+	Order—ontents nvarchar(max) not null,
 	OrderDate datetime not null,
 	OrderDeliveryDate datetime not null,
 	OrderPickupPoint int foreign key references [PickupPoint](PickupPointID) not null,
@@ -65,11 +65,16 @@ create table [Order]
 	OrderStatus int foreign key references [Status](StatusID) not null,
 )
 go
-create table [Tovar]
+create table [TovarOfName]
 (
-	TovarID int primary key identity,
-	TovarName nvarchar(150) not null,
-	TovarDescription nvarchar(max) not null,
+	TovarNameID int primary key identity,
+	TovarOfName nvarchar(150) not null,
+)
+go
+create table [Provider]
+(
+	ProviderID int primary key identity,
+	ProviderName nvarchar(150) not null,
 )
 go
 create table [Manufacturer]
@@ -78,16 +83,19 @@ create table [Manufacturer]
 	ManufacturerName nvarchar(150) not null,
 )
 go
+create table [Tovar]
+(
+	TovarID int primary key identity,
+	TovarName int foreign key references [TovarOfName](TovarNameID) not null,
+	TovarManufacturer int foreign key references [Manufacturer](ManufacturerID) not null,
+	TovarProvider int foreign key references [Provider](ProviderID) not null,
+	TovarDescription nvarchar(max) not null,
+)
+go
 create table [Category]
 (
 	CategoryID int primary key identity,
 	CategoryName nvarchar(150) not null,
-)
-go
-create table [Provider]
-(
-	ProviderID int primary key identity,
-	ProviderName nvarchar(150) not null,
 )
 go
 create table [MeasurementUnit]
@@ -103,8 +111,6 @@ create table Product
 	ProductMeasurementUnit int foreign key references [MeasurementUnit](MeasurementUnitID) not null,
 	ProductCost decimal(19,4) not null,
 	ProductMaximumDiscountAmount tinyint null,
-	ProductManufacturer int foreign key references [Manufacturer](ManufacturerID) not null,
-	ProductProvider int foreign key references [Provider](ProviderID) not null,
 	ProductCategory int foreign key references [Category](CategoryID) not null,
 	ProductDiscountAmount tinyint null,
 	ProductQuantityInStock int not null,

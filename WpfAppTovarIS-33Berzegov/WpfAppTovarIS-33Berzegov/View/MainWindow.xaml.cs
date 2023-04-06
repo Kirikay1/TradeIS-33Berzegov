@@ -30,7 +30,6 @@ namespace WpfAppTovarIS_33Berzegov
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-
                 (DataContext as AuthVM).Password = TxbPassword.Password;
                 (DataContext as AuthVM).Auntification();
         }

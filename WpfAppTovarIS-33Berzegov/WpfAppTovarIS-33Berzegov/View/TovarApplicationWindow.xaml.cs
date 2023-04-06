@@ -28,5 +28,20 @@ namespace WpfAppTovarIS_33Berzegov.View
             foreach (Window window in App.Current.Windows)
                 window.Close();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

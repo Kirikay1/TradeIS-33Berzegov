@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppTovarIS_33Berzegov.View"
         mc:Ignorable="d"
-        Title="TovarApplicationWindow" Height="450" Width="800">
+        ResizeMode="CanMinimize"
+        FontFamily="Comic Sans MS"
+        Icon="/Resources/icon.ico"
+        Title="TovarApplicationWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Добавить" Margin="10" Name="AddButton" Click="AddButton_Click" Grid.Column="0" Background="#FF498C51"/>
+            <Button Content="Изменить" Margin="10" Name="EditButton" Click="EditButton_Click" Grid.Column="1" Background="#FF498C51"/>
+            <Button Content="Удалить" Margin="10" Name="DeleteButton" Click="DeleteButton_Click" Grid.Column="2" Background="#FF498C51"/>
+        </Grid>
     </Grid>
 </Window>
