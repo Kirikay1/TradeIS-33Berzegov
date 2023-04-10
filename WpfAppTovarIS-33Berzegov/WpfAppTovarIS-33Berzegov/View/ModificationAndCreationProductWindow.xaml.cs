@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -13,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfAppTovarIS_33Berzegov.Model.DataBase;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace WpfAppTovarIS_33Berzegov.View
 {
@@ -34,10 +37,17 @@ namespace WpfAppTovarIS_33Berzegov.View
             else
                 _product = product;
             this.DataContext = _product;
+
+            cmTovarName.ItemsSource = Model.DataBase.ConnectDB.db.TovarOfName.ToList();
         }
 
         private void SaveButtonClick_Click(object sender, RoutedEventArgs e)
         {
+            TovarOfName tovar = new TovarOfName();
+
+            var CurrentTovarName = cmTovarName.SelectedItem as TovarOfName;
+            tovar.TovarNameID = CurrentTovarName.TovarNameID;
+
             using (var db = new TradeIS_33BerzegovEntities())
             {
                 try

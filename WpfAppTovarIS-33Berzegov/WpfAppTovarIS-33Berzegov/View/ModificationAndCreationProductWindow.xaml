@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppTovarIS_33Berzegov.View"
         mc:Ignorable="d"
-        Title="ModificationAndCreationProductWindow" Height="450" Width="800">
+        Title="ModificationAndCreationProductWindow" Height="470" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,11 +27,12 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Название товара" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductDescription.TovarName}" Margin="10"/>
+            <ComboBox x:Name="cmTovarName" Margin="10" DisplayMemberPath="TovarOfName1"
+                      SelectedItem="{Binding Product.Tovar.TovarOfName.TovarOfName1}"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <Label Content="Id ед. изм" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductMeasurementUnit}" Margin="10"/>
+            <Label Content="Ед. изм" HorizontalAlignment="Center"/>
+            <ComboBox Text="{Binding ProductMeasurementUnit}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1">
             <Label Content="Цена" HorizontalAlignment="Center"/>
@@ -42,16 +43,16 @@
             <TextBox Text="{Binding ProductMaximumDiscountAmount}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2">
-            <Label Content="Id производителя" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductManufacturer}" Margin="10"/>
+            <Label Content="Производителя" HorizontalAlignment="Center"/>
+            <ComboBox Text="{Binding Tovar.TovarManufacturer}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Row="3">
-            <Label Content="Id поставщика" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductProvider}" Margin="10"/>
+            <Label Content="Поставщик" HorizontalAlignment="Center"/>
+            <ComboBox Text="{Binding Tovar.TovarProvider}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="3">
-            <Label Content="Id категории" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductCategory}" Margin="10"/>
+            <Label Content="Категория" HorizontalAlignment="Center"/>
+            <ComboBox Text="{Binding ProductCategory}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Row="4">
             <Label Content="Текущая скидка" HorizontalAlignment="Center"/>
@@ -63,7 +64,7 @@
         </StackPanel>
         <StackPanel Grid.Row="5">
             <Label Content="Описание товара" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding ProductDescription.TovarDescription}" Margin="10"/>
+            <TextBox Text="{Binding Tovar.TovarDescription}" Margin="10"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="5">
             <Label Content="Картинка" HorizontalAlignment="Center"/>

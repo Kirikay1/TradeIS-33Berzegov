@@ -86,16 +86,7 @@ namespace WpfAppTovarIS_33Berzegov.ViewModel
                 OnPropertyChanged(nameof(ProductArticleNumber));
             }
         }
-        private int _productTovar;
-        public int ProductTovar
-        {
-            get => _productTovar;
-            set
-            {
-                _productTovar = value;
-                OnPropertyChanged(nameof(ProductTovar));
-            }
-        }
+
         private int _productMeasurementUnit;
         public int ProductMeasurementUnit
         {

@@ -8,7 +8,7 @@
         ResizeMode="CanMinimize"
         FontFamily="Comic Sans MS"
         Icon="/Resources/icon.ico"
-        Title="TovarApplicationWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="TovarApplicationWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -34,10 +34,10 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Header="Название товара"
-                        Binding="{Binding ProductTovar}"/>
+                        Binding="{Binding Tovar.TovarOfName.TovarOfName1}"/>
                     <DataGridTextColumn
                         Header="Описание"
-                        Binding="{Binding ProductTovar.TovarDescription}"/>
+                        Binding="{Binding Tovar.TovarDescription}"/>
                     <DataGridTextColumn
                         Header="Цена"
                         Binding="{Binding ProductCost}"/>
@@ -46,7 +46,7 @@
                         Binding="{Binding ProductQuantityInStock}"/>
                     <DataGridTextColumn
                         Header="Производитель"
-                        Binding="{Binding ProductManufacturer.ManufacturerName}"/>
+                        Binding="{Binding Tovar.Manufacturer.ManufacturerName}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

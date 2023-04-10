@@ -109,3 +109,8 @@ C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Be
 C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.GenerateResource.cache
 C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.CoreCompileInputs.cache
 C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov.csproj.CopyComplete
+D:\IS-33\Berzegov_Maksim\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\ModificationAndCreationProductWindow.g.cs
+D:\IS-33\Berzegov_Maksim\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.g.cs
+D:\IS-33\Berzegov_Maksim\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\WpfAppTovarIS-33Berzegov_Content.g.cs
+D:\IS-33\Berzegov_Maksim\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\ModificationAndCreationProductWindow.baml
+D:\IS-33\Berzegov_Maksim\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\View\TovarApplicationWindow.baml

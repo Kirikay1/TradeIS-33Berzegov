@@ -25,11 +25,6 @@ namespace WpfAppTovarIS_33Berzegov.View
             InitializeComponent();
             this.DataContext = new ProductVM();
         }
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            foreach (Window window in App.Current.Windows)
-                window.Close();
-        }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
