@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\
+C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\obj\Debug\
 WpfAppTovarIS_33Berzegov
 none
 false
 DEBUG;TRACE
-D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\App.xaml
-21487781715
+C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\App.xaml
+3-398911003
 2-1737553347
-28-104985418
-181119562675
-View\MainWindow.xaml;View\TovarApplicationWindow.xaml;
+31729808522
+181628506407
+View\MainWindow.xaml;View\ModificationAndCreationProductWindow.xaml;View\TovarApplicationWindow.xaml;
 
-True
+False
 

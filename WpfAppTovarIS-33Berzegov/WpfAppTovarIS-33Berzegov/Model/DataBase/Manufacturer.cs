@@ -17,13 +17,13 @@ namespace WpfAppTovarIS_33Berzegov.Model.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Manufacturer()
         {
-            this.Product = new HashSet<Product>();
+            this.Tovar = new HashSet<Tovar>();
         }
     
         public int ManufacturerID { get; set; }
         public string ManufacturerName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Tovar> Tovar { get; set; }
     }
 }

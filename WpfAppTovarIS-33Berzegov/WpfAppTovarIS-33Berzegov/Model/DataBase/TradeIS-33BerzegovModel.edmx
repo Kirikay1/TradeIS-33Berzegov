@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище TradeIS_33BerzegovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -83,8 +83,6 @@
           <Property Name="ProductMeasurementUnit" Type="int" Nullable="false" />
           <Property Name="ProductCost" Type="decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="ProductMaximumDiscountAmount" Type="tinyint" />
-          <Property Name="ProductManufacturer" Type="int" Nullable="false" />
-          <Property Name="ProductProvider" Type="int" Nullable="false" />
           <Property Name="ProductCategory" Type="int" Nullable="false" />
           <Property Name="ProductDiscountAmount" Type="tinyint" />
           <Property Name="ProductQuantityInStock" Type="int" Nullable="false" />
@@ -133,8 +131,17 @@
             <PropertyRef Name="TovarID" />
           </Key>
           <Property Name="TovarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TovarName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="TovarName" Type="int" Nullable="false" />
+          <Property Name="TovarManufacturer" Type="int" Nullable="false" />
+          <Property Name="TovarProvider" Type="int" Nullable="false" />
           <Property Name="TovarDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TovarOfName">
+          <Key>
+            <PropertyRef Name="TovarNameID" />
+          </Key>
+          <Property Name="TovarNameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TovarOfName" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -146,7 +153,7 @@
           <Property Name="UserPassword" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UserRole" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Order__OrderInfo__36B12243">
+        <Association Name="FK__Order__OrderInfo__49C3F6B7">
           <End Role="Info" Type="Self.Info" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -158,7 +165,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__OrderPick__35BCFE0A">
+        <Association Name="FK__Order__OrderPick__48CFD27E">
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -170,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__OrderStat__37A5467C">
+        <Association Name="FK__Order__OrderStat__4AB81AF0">
           <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderProd__Order__4AB81AF0">
+        <Association Name="FK__OrderProd__Order__60A75C0F">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
           <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -194,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderProd__Produ__4BAC3F29">
+        <Association Name="FK__OrderProd__Produ__619B8048">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -206,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PickupPoi__Stree__32E0915F">
+        <Association Name="FK__PickupPoi__Stree__45F365D3">
           <End Role="Street" Type="Self.Street" Multiplicity="1" />
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="*" />
           <ReferentialConstraint>
@@ -218,7 +225,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PickupPoin__City__31EC6D26">
+        <Association Name="FK__PickupPoin__City__44FF419A">
           <End Role="City" Type="Self.City" Multiplicity="1" />
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="*" />
           <ReferentialConstraint>
@@ -230,7 +237,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__440B1D61">
+        <Association Name="FK__Product__Product__5BE2A6F2">
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -242,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__44FF419A">
+        <Association Name="FK__Product__Product__5CD6CB2B">
           <End Role="MeasurementUnit" Type="Self.MeasurementUnit" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -254,31 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__45F365D3">
-          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Manufacturer">
-              <PropertyRef Name="ManufacturerID" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ProductManufacturer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Product__Product__46E78A0C">
-          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Provider">
-              <PropertyRef Name="ProviderID" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ProductProvider" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Product__Product__47DBAE45">
+        <Association Name="FK__Product__Product__5DCAEF64">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -290,7 +273,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User__UserInfo__286302EC">
+        <Association Name="FK__Tovar__TovarManu__5441852A">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManufacturerID" />
+            </Principal>
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarManufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tovar__TovarName__534D60F1">
+          <End Role="TovarOfName" Type="Self.TovarOfName" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TovarOfName">
+              <PropertyRef Name="TovarNameID" />
+            </Principal>
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tovar__TovarProv__5535A963">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderID" />
+            </Principal>
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__UserInfo__3B75D760">
           <End Role="Info" Type="Self.Info" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -302,7 +321,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User__UserRole__29572725">
+        <Association Name="FK__User__UserRole__3C69FB99">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -314,7 +333,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище TradeIS_33BerzegovModelContainer">
+        <EntityContainer Name="Хранилище ModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
@@ -330,60 +349,65 @@
           <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TovarOfName" EntityType="Self.TovarOfName" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Order__OrderInfo__36B12243" Association="Self.FK__Order__OrderInfo__36B12243">
+          <AssociationSet Name="FK__Order__OrderInfo__49C3F6B7" Association="Self.FK__Order__OrderInfo__49C3F6B7">
             <End Role="Info" EntitySet="Info" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__OrderPick__35BCFE0A" Association="Self.FK__Order__OrderPick__35BCFE0A">
+          <AssociationSet Name="FK__Order__OrderPick__48CFD27E" Association="Self.FK__Order__OrderPick__48CFD27E">
             <End Role="PickupPoint" EntitySet="PickupPoint" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__OrderStat__37A5467C" Association="Self.FK__Order__OrderStat__37A5467C">
+          <AssociationSet Name="FK__Order__OrderStat__4AB81AF0" Association="Self.FK__Order__OrderStat__4AB81AF0">
             <End Role="Status" EntitySet="Status" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderProd__Order__4AB81AF0" Association="Self.FK__OrderProd__Order__4AB81AF0">
+          <AssociationSet Name="FK__OrderProd__Order__60A75C0F" Association="Self.FK__OrderProd__Order__60A75C0F">
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderProduct" EntitySet="OrderProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderProd__Produ__4BAC3F29" Association="Self.FK__OrderProd__Produ__4BAC3F29">
+          <AssociationSet Name="FK__OrderProd__Produ__619B8048" Association="Self.FK__OrderProd__Produ__619B8048">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderProduct" EntitySet="OrderProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__PickupPoi__Stree__32E0915F" Association="Self.FK__PickupPoi__Stree__32E0915F">
+          <AssociationSet Name="FK__PickupPoi__Stree__45F365D3" Association="Self.FK__PickupPoi__Stree__45F365D3">
             <End Role="Street" EntitySet="Street" />
             <End Role="PickupPoint" EntitySet="PickupPoint" />
           </AssociationSet>
-          <AssociationSet Name="FK__PickupPoin__City__31EC6D26" Association="Self.FK__PickupPoin__City__31EC6D26">
+          <AssociationSet Name="FK__PickupPoin__City__44FF419A" Association="Self.FK__PickupPoin__City__44FF419A">
             <End Role="City" EntitySet="City" />
             <End Role="PickupPoint" EntitySet="PickupPoint" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__440B1D61" Association="Self.FK__Product__Product__440B1D61">
+          <AssociationSet Name="FK__Product__Product__5BE2A6F2" Association="Self.FK__Product__Product__5BE2A6F2">
             <End Role="Tovar" EntitySet="Tovar" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__44FF419A" Association="Self.FK__Product__Product__44FF419A">
+          <AssociationSet Name="FK__Product__Product__5CD6CB2B" Association="Self.FK__Product__Product__5CD6CB2B">
             <End Role="MeasurementUnit" EntitySet="MeasurementUnit" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__45F365D3" Association="Self.FK__Product__Product__45F365D3">
-            <End Role="Manufacturer" EntitySet="Manufacturer" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__46E78A0C" Association="Self.FK__Product__Product__46E78A0C">
-            <End Role="Provider" EntitySet="Provider" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__47DBAE45" Association="Self.FK__Product__Product__47DBAE45">
+          <AssociationSet Name="FK__Product__Product__5DCAEF64" Association="Self.FK__Product__Product__5DCAEF64">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__User__UserInfo__286302EC" Association="Self.FK__User__UserInfo__286302EC">
+          <AssociationSet Name="FK__Tovar__TovarManu__5441852A" Association="Self.FK__Tovar__TovarManu__5441852A">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Tovar" EntitySet="Tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tovar__TovarName__534D60F1" Association="Self.FK__Tovar__TovarName__534D60F1">
+            <End Role="TovarOfName" EntitySet="TovarOfName" />
+            <End Role="Tovar" EntitySet="Tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tovar__TovarProv__5535A963" Association="Self.FK__Tovar__TovarProv__5535A963">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="Tovar" EntitySet="Tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__UserInfo__3B75D760" Association="Self.FK__User__UserInfo__3B75D760">
             <End Role="Info" EntitySet="Info" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK__User__UserRole__29572725" Association="Self.FK__User__UserRole__29572725">
+          <AssociationSet Name="FK__User__UserRole__3C69FB99" Association="Self.FK__User__UserRole__3C69FB99">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
@@ -392,14 +416,14 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TradeIS_33BerzegovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__47DBAE45" FromRole="Category" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__5DCAEF64" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -407,7 +431,7 @@
           </Key>
           <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__PickupPoin__City__31EC6D26" FromRole="City" ToRole="PickupPoint" />
+          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__PickupPoin__City__44FF419A" FromRole="City" ToRole="PickupPoint" />
         </EntityType>
         <EntityType Name="Info">
           <Key>
@@ -417,8 +441,8 @@
           <Property Name="UserSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserPatronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderInfo__36B12243" FromRole="Info" ToRole="Order" />
-          <NavigationProperty Name="User" Relationship="Self.FK__User__UserInfo__286302EC" FromRole="Info" ToRole="User" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderInfo__49C3F6B7" FromRole="Info" ToRole="Order" />
+          <NavigationProperty Name="User" Relationship="Self.FK__User__UserInfo__3B75D760" FromRole="Info" ToRole="User" />
         </EntityType>
         <EntityType Name="Manufacturer">
           <Key>
@@ -426,7 +450,7 @@
           </Key>
           <Property Name="ManufacturerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ManufacturerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__45F365D3" FromRole="Manufacturer" ToRole="Product" />
+          <NavigationProperty Name="Tovar" Relationship="Self.FK__Tovar__TovarManu__5441852A" FromRole="Manufacturer" ToRole="Tovar" />
         </EntityType>
         <EntityType Name="MeasurementUnit">
           <Key>
@@ -434,7 +458,7 @@
           </Key>
           <Property Name="MeasurementUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MeasurementUnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__44FF419A" FromRole="MeasurementUnit" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__5CD6CB2B" FromRole="MeasurementUnit" ToRole="Product" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -449,9 +473,9 @@
           <Property Name="OrderInfo" Type="Int32" />
           <Property Name="OrderCodeToObtain" Type="Int32" Nullable="false" />
           <Property Name="OrderStatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Info" Relationship="Self.FK__Order__OrderInfo__36B12243" FromRole="Order" ToRole="Info" />
-          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__Order__OrderPick__35BCFE0A" FromRole="Order" ToRole="PickupPoint" />
-          <NavigationProperty Name="Status" Relationship="Self.FK__Order__OrderStat__37A5467C" FromRole="Order" ToRole="Status" />
+          <NavigationProperty Name="Info" Relationship="Self.FK__Order__OrderInfo__49C3F6B7" FromRole="Order" ToRole="Info" />
+          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__Order__OrderPick__48CFD27E" FromRole="Order" ToRole="PickupPoint" />
+          <NavigationProperty Name="Status" Relationship="Self.FK__Order__OrderStat__4AB81AF0" FromRole="Order" ToRole="Status" />
           <NavigationProperty Name="Product" Relationship="Self.OrderProduct" FromRole="Order" ToRole="Product" />
         </EntityType>
         <EntityType Name="PickupPoint">
@@ -463,9 +487,9 @@
           <Property Name="City" Type="Int32" Nullable="false" />
           <Property Name="Street" Type="Int32" Nullable="false" />
           <Property Name="House" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="City1" Relationship="Self.FK__PickupPoin__City__31EC6D26" FromRole="PickupPoint" ToRole="City" />
-          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderPick__35BCFE0A" FromRole="PickupPoint" ToRole="Order" />
-          <NavigationProperty Name="Street1" Relationship="Self.FK__PickupPoi__Stree__32E0915F" FromRole="PickupPoint" ToRole="Street" />
+          <NavigationProperty Name="City1" Relationship="Self.FK__PickupPoin__City__44FF419A" FromRole="PickupPoint" ToRole="City" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderPick__48CFD27E" FromRole="PickupPoint" ToRole="Order" />
+          <NavigationProperty Name="Street1" Relationship="Self.FK__PickupPoi__Stree__45F365D3" FromRole="PickupPoint" ToRole="Street" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -476,17 +500,13 @@
           <Property Name="ProductMeasurementUnit" Type="Int32" Nullable="false" />
           <Property Name="ProductCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="ProductMaximumDiscountAmount" Type="Byte" />
-          <Property Name="ProductManufacturer" Type="Int32" Nullable="false" />
-          <Property Name="ProductProvider" Type="Int32" Nullable="false" />
           <Property Name="ProductCategory" Type="Int32" Nullable="false" />
           <Property Name="ProductDiscountAmount" Type="Byte" />
           <Property Name="ProductQuantityInStock" Type="Int32" Nullable="false" />
           <Property Name="ProductPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Product__47DBAE45" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Product__Product__45F365D3" FromRole="Product" ToRole="Manufacturer" />
-          <NavigationProperty Name="MeasurementUnit" Relationship="Self.FK__Product__Product__44FF419A" FromRole="Product" ToRole="MeasurementUnit" />
-          <NavigationProperty Name="Tovar" Relationship="Self.FK__Product__Product__440B1D61" FromRole="Product" ToRole="Tovar" />
-          <NavigationProperty Name="Provider" Relationship="Self.FK__Product__Product__46E78A0C" FromRole="Product" ToRole="Provider" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Product__5DCAEF64" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="MeasurementUnit" Relationship="Self.FK__Product__Product__5CD6CB2B" FromRole="Product" ToRole="MeasurementUnit" />
+          <NavigationProperty Name="Tovar" Relationship="Self.FK__Product__Product__5BE2A6F2" FromRole="Product" ToRole="Tovar" />
           <NavigationProperty Name="Order" Relationship="Self.OrderProduct" FromRole="Product" ToRole="Order" />
         </EntityType>
         <EntityType Name="Provider">
@@ -495,7 +515,7 @@
           </Key>
           <Property Name="ProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProviderName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__46E78A0C" FromRole="Provider" ToRole="Product" />
+          <NavigationProperty Name="Tovar" Relationship="Self.FK__Tovar__TovarProv__5535A963" FromRole="Provider" ToRole="Tovar" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -503,7 +523,7 @@
           </Key>
           <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK__User__UserRole__29572725" FromRole="Role" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK__User__UserRole__3C69FB99" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -511,7 +531,7 @@
           </Key>
           <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StatusName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderStat__37A5467C" FromRole="Status" ToRole="Order" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__OrderStat__4AB81AF0" FromRole="Status" ToRole="Order" />
         </EntityType>
         <EntityType Name="Street">
           <Key>
@@ -519,7 +539,7 @@
           </Key>
           <Property Name="StreetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__PickupPoi__Stree__32E0915F" FromRole="Street" ToRole="PickupPoint" />
+          <NavigationProperty Name="PickupPoint" Relationship="Self.FK__PickupPoi__Stree__45F365D3" FromRole="Street" ToRole="PickupPoint" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -536,9 +556,22 @@
             <PropertyRef Name="TovarID" />
           </Key>
           <Property Name="TovarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TovarName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TovarName" Type="Int32" Nullable="false" />
+          <Property Name="TovarManufacturer" Type="Int32" Nullable="false" />
+          <Property Name="TovarProvider" Type="Int32" Nullable="false" />
           <Property Name="TovarDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__440B1D61" FromRole="Tovar" ToRole="Product" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Tovar__TovarManu__5441852A" FromRole="Tovar" ToRole="Manufacturer" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Product__5BE2A6F2" FromRole="Tovar" ToRole="Product" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK__Tovar__TovarProv__5535A963" FromRole="Tovar" ToRole="Provider" />
+          <NavigationProperty Name="TovarOfName" Relationship="Self.FK__Tovar__TovarName__534D60F1" FromRole="Tovar" ToRole="TovarOfName" />
+        </EntityType>
+        <EntityType Name="TovarOfName">
+          <Key>
+            <PropertyRef Name="TovarNameID" />
+          </Key>
+          <Property Name="TovarNameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TovarOfName1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tovar" Relationship="Self.FK__Tovar__TovarName__534D60F1" FromRole="TovarOfName" ToRole="Tovar" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -549,10 +582,10 @@
           <Property Name="UserLogin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserRole" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Info" Relationship="Self.FK__User__UserInfo__286302EC" FromRole="User" ToRole="Info" />
-          <NavigationProperty Name="Role" Relationship="Self.FK__User__UserRole__29572725" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Info" Relationship="Self.FK__User__UserInfo__3B75D760" FromRole="User" ToRole="Info" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__User__UserRole__3C69FB99" FromRole="User" ToRole="Role" />
         </EntityType>
-        <Association Name="FK__Product__Product__47DBAE45">
+        <Association Name="FK__Product__Product__5DCAEF64">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -564,7 +597,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PickupPoin__City__31EC6D26">
+        <Association Name="FK__PickupPoin__City__44FF419A">
           <End Role="City" Type="Self.City" Multiplicity="1" />
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="*" />
           <ReferentialConstraint>
@@ -576,7 +609,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__OrderInfo__36B12243">
+        <Association Name="FK__Order__OrderInfo__49C3F6B7">
           <End Role="Info" Type="Self.Info" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -588,7 +621,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User__UserInfo__286302EC">
+        <Association Name="FK__User__UserInfo__3B75D760">
           <End Role="Info" Type="Self.Info" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -600,19 +633,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__45F365D3">
+        <Association Name="FK__Tovar__TovarManu__5441852A">
           <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manufacturer">
               <PropertyRef Name="ManufacturerID" />
             </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ProductManufacturer" />
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarManufacturer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__44FF419A">
+        <Association Name="FK__Product__Product__5CD6CB2B">
           <End Role="MeasurementUnit" Type="Self.MeasurementUnit" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -624,7 +657,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__OrderPick__35BCFE0A">
+        <Association Name="FK__Order__OrderPick__48CFD27E">
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -636,7 +669,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__OrderStat__37A5467C">
+        <Association Name="FK__Order__OrderStat__4AB81AF0">
           <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -648,7 +681,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PickupPoi__Stree__32E0915F">
+        <Association Name="FK__PickupPoi__Stree__45F365D3">
           <End Role="Street" Type="Self.Street" Multiplicity="1" />
           <End Role="PickupPoint" Type="Self.PickupPoint" Multiplicity="*" />
           <ReferentialConstraint>
@@ -660,7 +693,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__440B1D61">
+        <Association Name="FK__Product__Product__5BE2A6F2">
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -672,19 +705,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__46E78A0C">
+        <Association Name="FK__Tovar__TovarProv__5535A963">
           <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provider">
               <PropertyRef Name="ProviderID" />
             </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ProductProvider" />
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarProvider" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User__UserRole__29572725">
+        <Association Name="FK__User__UserRole__3C69FB99">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -693,6 +726,18 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="UserRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tovar__TovarName__534D60F1">
+          <End Role="TovarOfName" Type="Self.TovarOfName" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TovarOfName">
+              <PropertyRef Name="TovarNameID" />
+            </Principal>
+            <Dependent Role="Tovar">
+              <PropertyRef Name="TovarName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -715,54 +760,59 @@
           <EntitySet Name="Street" EntityType="Self.Street" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tovar" EntityType="Self.Tovar" />
+          <EntitySet Name="TovarOfName" EntityType="Self.TovarOfName" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <AssociationSet Name="FK__Product__Product__47DBAE45" Association="Self.FK__Product__Product__47DBAE45">
+          <AssociationSet Name="FK__Product__Product__5DCAEF64" Association="Self.FK__Product__Product__5DCAEF64">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__PickupPoin__City__31EC6D26" Association="Self.FK__PickupPoin__City__31EC6D26">
+          <AssociationSet Name="FK__PickupPoin__City__44FF419A" Association="Self.FK__PickupPoin__City__44FF419A">
             <End Role="City" EntitySet="City" />
             <End Role="PickupPoint" EntitySet="PickupPoint" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__OrderInfo__36B12243" Association="Self.FK__Order__OrderInfo__36B12243">
+          <AssociationSet Name="FK__Order__OrderInfo__49C3F6B7" Association="Self.FK__Order__OrderInfo__49C3F6B7">
             <End Role="Info" EntitySet="Info" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__User__UserInfo__286302EC" Association="Self.FK__User__UserInfo__286302EC">
+          <AssociationSet Name="FK__User__UserInfo__3B75D760" Association="Self.FK__User__UserInfo__3B75D760">
             <End Role="Info" EntitySet="Info" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__45F365D3" Association="Self.FK__Product__Product__45F365D3">
+          <AssociationSet Name="FK__Tovar__TovarManu__5441852A" Association="Self.FK__Tovar__TovarManu__5441852A">
             <End Role="Manufacturer" EntitySet="Manufacturer" />
-            <End Role="Product" EntitySet="Product" />
+            <End Role="Tovar" EntitySet="Tovar" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__44FF419A" Association="Self.FK__Product__Product__44FF419A">
+          <AssociationSet Name="FK__Product__Product__5CD6CB2B" Association="Self.FK__Product__Product__5CD6CB2B">
             <End Role="MeasurementUnit" EntitySet="MeasurementUnit" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__OrderPick__35BCFE0A" Association="Self.FK__Order__OrderPick__35BCFE0A">
+          <AssociationSet Name="FK__Order__OrderPick__48CFD27E" Association="Self.FK__Order__OrderPick__48CFD27E">
             <End Role="PickupPoint" EntitySet="PickupPoint" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__OrderStat__37A5467C" Association="Self.FK__Order__OrderStat__37A5467C">
+          <AssociationSet Name="FK__Order__OrderStat__4AB81AF0" Association="Self.FK__Order__OrderStat__4AB81AF0">
             <End Role="Status" EntitySet="Status" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__PickupPoi__Stree__32E0915F" Association="Self.FK__PickupPoi__Stree__32E0915F">
+          <AssociationSet Name="FK__PickupPoi__Stree__45F365D3" Association="Self.FK__PickupPoi__Stree__45F365D3">
             <End Role="Street" EntitySet="Street" />
             <End Role="PickupPoint" EntitySet="PickupPoint" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__440B1D61" Association="Self.FK__Product__Product__440B1D61">
+          <AssociationSet Name="FK__Product__Product__5BE2A6F2" Association="Self.FK__Product__Product__5BE2A6F2">
             <End Role="Tovar" EntitySet="Tovar" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__46E78A0C" Association="Self.FK__Product__Product__46E78A0C">
+          <AssociationSet Name="FK__Tovar__TovarProv__5535A963" Association="Self.FK__Tovar__TovarProv__5535A963">
             <End Role="Provider" EntitySet="Provider" />
-            <End Role="Product" EntitySet="Product" />
+            <End Role="Tovar" EntitySet="Tovar" />
           </AssociationSet>
-          <AssociationSet Name="FK__User__UserRole__29572725" Association="Self.FK__User__UserRole__29572725">
+          <AssociationSet Name="FK__User__UserRole__3C69FB99" Association="Self.FK__User__UserRole__3C69FB99">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tovar__TovarName__534D60F1" Association="Self.FK__Tovar__TovarName__534D60F1">
+            <End Role="TovarOfName" EntitySet="TovarOfName" />
+            <End Role="Tovar" EntitySet="Tovar" />
           </AssociationSet>
           <AssociationSet Name="OrderProduct" Association="Self.OrderProduct">
             <End Role="Order" EntitySet="Order" />
@@ -774,9 +824,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище TradeIS_33BerzegovModelContainer" CdmEntityContainer="TradeIS_33BerzegovEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="TradeIS_33BerzegovEntities">
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Category">
+            <EntityTypeMapping TypeName="Model.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -784,7 +834,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="City">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.City">
+            <EntityTypeMapping TypeName="Model.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -792,7 +842,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Info">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Info">
+            <EntityTypeMapping TypeName="Model.Info">
               <MappingFragment StoreEntitySet="Info">
                 <ScalarProperty Name="InfoID" ColumnName="InfoID" />
                 <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
@@ -802,7 +852,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Manufacturer">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Manufacturer">
+            <EntityTypeMapping TypeName="Model.Manufacturer">
               <MappingFragment StoreEntitySet="Manufacturer">
                 <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
                 <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
@@ -810,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MeasurementUnit">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.MeasurementUnit">
+            <EntityTypeMapping TypeName="Model.MeasurementUnit">
               <MappingFragment StoreEntitySet="MeasurementUnit">
                 <ScalarProperty Name="MeasurementUnitID" ColumnName="MeasurementUnitID" />
                 <ScalarProperty Name="MeasurementUnitName" ColumnName="MeasurementUnitName" />
@@ -818,7 +868,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Order">
+            <EntityTypeMapping TypeName="Model.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
@@ -833,7 +883,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PickupPoint">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.PickupPoint">
+            <EntityTypeMapping TypeName="Model.PickupPoint">
               <MappingFragment StoreEntitySet="PickupPoint">
                 <ScalarProperty Name="PickupPointID" ColumnName="PickupPointID" />
                 <ScalarProperty Name="IndexPickupPoint" ColumnName="IndexPickupPoint" />
@@ -844,15 +894,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Product">
+            <EntityTypeMapping TypeName="Model.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
                 <ScalarProperty Name="ProductTovar" ColumnName="ProductTovar" />
                 <ScalarProperty Name="ProductMeasurementUnit" ColumnName="ProductMeasurementUnit" />
                 <ScalarProperty Name="ProductCost" ColumnName="ProductCost" />
                 <ScalarProperty Name="ProductMaximumDiscountAmount" ColumnName="ProductMaximumDiscountAmount" />
-                <ScalarProperty Name="ProductManufacturer" ColumnName="ProductManufacturer" />
-                <ScalarProperty Name="ProductProvider" ColumnName="ProductProvider" />
                 <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
                 <ScalarProperty Name="ProductDiscountAmount" ColumnName="ProductDiscountAmount" />
                 <ScalarProperty Name="ProductQuantityInStock" ColumnName="ProductQuantityInStock" />
@@ -861,7 +909,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provider">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Provider">
+            <EntityTypeMapping TypeName="Model.Provider">
               <MappingFragment StoreEntitySet="Provider">
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
                 <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
@@ -869,7 +917,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Role">
+            <EntityTypeMapping TypeName="Model.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -877,7 +925,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Status">
+            <EntityTypeMapping TypeName="Model.Status">
               <MappingFragment StoreEntitySet="Status">
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="StatusName" ColumnName="StatusName" />
@@ -885,7 +933,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Street">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Street">
+            <EntityTypeMapping TypeName="Model.Street">
               <MappingFragment StoreEntitySet="Street">
                 <ScalarProperty Name="StreetID" ColumnName="StreetID" />
                 <ScalarProperty Name="StreetName" ColumnName="StreetName" />
@@ -893,7 +941,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -904,16 +952,26 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tovar">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Tovar">
+            <EntityTypeMapping TypeName="Model.Tovar">
               <MappingFragment StoreEntitySet="Tovar">
                 <ScalarProperty Name="TovarID" ColumnName="TovarID" />
                 <ScalarProperty Name="TovarName" ColumnName="TovarName" />
+                <ScalarProperty Name="TovarManufacturer" ColumnName="TovarManufacturer" />
+                <ScalarProperty Name="TovarProvider" ColumnName="TovarProvider" />
                 <ScalarProperty Name="TovarDescription" ColumnName="TovarDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TovarOfName">
+            <EntityTypeMapping TypeName="Model.TovarOfName">
+              <MappingFragment StoreEntitySet="TovarOfName">
+                <ScalarProperty Name="TovarNameID" ColumnName="TovarNameID" />
+                <ScalarProperty Name="TovarOfName1" ColumnName="TovarOfName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.User">
+            <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="UserInfo" ColumnName="UserInfo" />
@@ -923,7 +981,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="OrderProduct" TypeName="TradeIS_33BerzegovModel.OrderProduct" StoreEntitySet="OrderProduct">
+          <AssociationSetMapping Name="OrderProduct" TypeName="Model.OrderProduct" StoreEntitySet="OrderProduct">
             <EndProperty Name="Order">
               <ScalarProperty Name="OrderID" ColumnName="OrderID" />
             </EndProperty>

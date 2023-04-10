@@ -67,18 +67,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\TovarApplicationWindow.xaml.cs">
-      <DependentUpon>TovarApplicationWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Model\DataBase\ConnectDB.cs" />
     <Compile Include="Model\DataBase\Category.cs">
       <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
     </Compile>
@@ -121,6 +109,9 @@
     <Compile Include="Model\DataBase\Tovar.cs">
       <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\DataBase\TovarOfName.cs">
+      <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataBase\TradeIS-33BerzegovModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,12 +130,32 @@
     <Compile Include="Model\DataBase\User.cs">
       <DependentUpon>TradeIS-33BerzegovModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProductVM.cs" />
+    <Compile Include="View\ModificationAndCreationProductWindow.xaml.cs">
+      <DependentUpon>ModificationAndCreationProductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TovarApplicationWindow.xaml.cs">
+      <DependentUpon>TovarApplicationWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\DataBase\ConnectDB.cs" />
     <Compile Include="ViewModel\AuthVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ModificationAndCreationProductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TovarApplicationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,24 +195,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\logo.png" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\DataBase\TradeIS-33BerzegovModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TradeIS-33BerzegovModel.Context.cs</LastGenOutput>
       <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
+      <LastGenOutput>TradeIS-33BerzegovModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\DataBase\TradeIS-33BerzegovModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TradeIS-33BerzegovModel.edmx</DependentUpon>
       <LastGenOutput>TradeIS-33BerzegovModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

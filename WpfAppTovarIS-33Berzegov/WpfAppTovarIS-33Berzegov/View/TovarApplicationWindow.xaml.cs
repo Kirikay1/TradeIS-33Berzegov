@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfAppTovarIS_33Berzegov.ViewModel;
 
 namespace WpfAppTovarIS_33Berzegov.View
 {
@@ -22,6 +23,7 @@ namespace WpfAppTovarIS_33Berzegov.View
         public TovarApplicationWindow()
         {
             InitializeComponent();
+            this.DataContext = new ProductVM();
         }
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -31,17 +33,24 @@ namespace WpfAppTovarIS_33Berzegov.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var Creation = new ModificationAndCreationProductWindow(null);
+            Creation.Show();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var Modification = new ModificationAndCreationProductWindow((DataContext as ProductVM).SelectedProduct);
+            Modification.Show();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            (DataContext as ProductVM).DeleteSelectedData();
+        }
 
+        internal void RefreshData()
+        {
+            (DataContext as ProductVM).LoadData();
         }
     }
 }

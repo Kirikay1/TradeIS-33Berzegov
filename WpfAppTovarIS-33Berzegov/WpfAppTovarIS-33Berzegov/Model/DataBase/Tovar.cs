@@ -21,10 +21,15 @@ namespace WpfAppTovarIS_33Berzegov.Model.DataBase
         }
     
         public int TovarID { get; set; }
-        public string TovarName { get; set; }
+        public int TovarName { get; set; }
+        public int TovarManufacturer { get; set; }
+        public int TovarProvider { get; set; }
         public string TovarDescription { get; set; }
     
+        public virtual Manufacturer Manufacturer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Product { get; set; }
+        public virtual Provider Provider { get; set; }
+        public virtual TovarOfName TovarOfName { get; set; }
     }
 }

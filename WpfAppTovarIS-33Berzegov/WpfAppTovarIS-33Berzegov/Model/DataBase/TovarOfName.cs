@@ -12,16 +12,16 @@ namespace WpfAppTovarIS_33Berzegov.Model.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Provider
+    public partial class TovarOfName
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Provider()
+        public TovarOfName()
         {
             this.Tovar = new HashSet<Tovar>();
         }
     
-        public int ProviderID { get; set; }
-        public string ProviderName { get; set; }
+        public int TovarNameID { get; set; }
+        public string TovarOfName1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tovar> Tovar { get; set; }

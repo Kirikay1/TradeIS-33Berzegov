@@ -25,18 +25,14 @@ namespace WpfAppTovarIS_33Berzegov.Model.DataBase
         public int ProductMeasurementUnit { get; set; }
         public decimal ProductCost { get; set; }
         public Nullable<byte> ProductMaximumDiscountAmount { get; set; }
-        public int ProductManufacturer { get; set; }
-        public int ProductProvider { get; set; }
         public int ProductCategory { get; set; }
         public Nullable<byte> ProductDiscountAmount { get; set; }
         public int ProductQuantityInStock { get; set; }
         public byte[] ProductPhoto { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual Manufacturer Manufacturer { get; set; }
         public virtual MeasurementUnit MeasurementUnit { get; set; }
         public virtual Tovar Tovar { get; set; }
-        public virtual Provider Provider { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
     }

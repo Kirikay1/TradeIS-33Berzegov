@@ -39,6 +39,7 @@ namespace WpfAppTovarIS_33Berzegov.Model.DataBase
         public virtual DbSet<Street> Street { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tovar> Tovar { get; set; }
+        public virtual DbSet<TovarOfName> TovarOfName { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

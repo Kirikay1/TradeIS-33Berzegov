@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\IS-33\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\Model\DataBase\TradeIS-33BerzegovModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Maxim\Desktop\МаксимИС-33\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\Model\DataBase\TradeIS-33BerzegovModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

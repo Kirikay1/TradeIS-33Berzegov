@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Maxim\Desktop\ИС-32\TradeIS-33Berzegov\WpfAppTovarIS-33Berzegov\WpfAppTovarIS-33Berzegov\App.xaml
-21487781715
+3-398911003
 2-1737553347
-27-2026763539
+31729808522
 18-1767728639
-View\MainWindow.xaml;View\TovarApplicationWindow.xaml;
+View\MainWindow.xaml;View\ModificationAndCreationProductWindow.xaml;View\TovarApplicationWindow.xaml;
 
-False
+True
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfAppTovarIS_33Berzegov.Model.DataBase;
 
-namespace WpfAppTovarIS_33Berzegov.Model
+namespace WpfAppTovarIS_33Berzegov.Model.DataBase
 {
     public static class ConnectDB
     {

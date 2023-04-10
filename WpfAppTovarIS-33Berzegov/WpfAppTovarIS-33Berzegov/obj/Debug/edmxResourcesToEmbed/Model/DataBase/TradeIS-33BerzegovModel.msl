@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище TradeIS_33BerzegovModelContainer" CdmEntityContainer="TradeIS_33BerzegovEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="TradeIS_33BerzegovEntities">
     <EntitySetMapping Name="Category">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Category">
+      <EntityTypeMapping TypeName="Model.Category">
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="City">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.City">
+      <EntityTypeMapping TypeName="Model.City">
         <MappingFragment StoreEntitySet="City">
           <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Info">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Info">
+      <EntityTypeMapping TypeName="Model.Info">
         <MappingFragment StoreEntitySet="Info">
           <ScalarProperty Name="InfoID" ColumnName="InfoID" />
           <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
@@ -28,7 +28,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Manufacturer">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Manufacturer">
+      <EntityTypeMapping TypeName="Model.Manufacturer">
         <MappingFragment StoreEntitySet="Manufacturer">
           <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
           <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
@@ -36,7 +36,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MeasurementUnit">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.MeasurementUnit">
+      <EntityTypeMapping TypeName="Model.MeasurementUnit">
         <MappingFragment StoreEntitySet="MeasurementUnit">
           <ScalarProperty Name="MeasurementUnitID" ColumnName="MeasurementUnitID" />
           <ScalarProperty Name="MeasurementUnitName" ColumnName="MeasurementUnitName" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Order">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Order">
+      <EntityTypeMapping TypeName="Model.Order">
         <MappingFragment StoreEntitySet="Order">
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
@@ -59,7 +59,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PickupPoint">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.PickupPoint">
+      <EntityTypeMapping TypeName="Model.PickupPoint">
         <MappingFragment StoreEntitySet="PickupPoint">
           <ScalarProperty Name="PickupPointID" ColumnName="PickupPointID" />
           <ScalarProperty Name="IndexPickupPoint" ColumnName="IndexPickupPoint" />
@@ -70,15 +70,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Product">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Product">
+      <EntityTypeMapping TypeName="Model.Product">
         <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
           <ScalarProperty Name="ProductTovar" ColumnName="ProductTovar" />
           <ScalarProperty Name="ProductMeasurementUnit" ColumnName="ProductMeasurementUnit" />
           <ScalarProperty Name="ProductCost" ColumnName="ProductCost" />
           <ScalarProperty Name="ProductMaximumDiscountAmount" ColumnName="ProductMaximumDiscountAmount" />
-          <ScalarProperty Name="ProductManufacturer" ColumnName="ProductManufacturer" />
-          <ScalarProperty Name="ProductProvider" ColumnName="ProductProvider" />
           <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
           <ScalarProperty Name="ProductDiscountAmount" ColumnName="ProductDiscountAmount" />
           <ScalarProperty Name="ProductQuantityInStock" ColumnName="ProductQuantityInStock" />
@@ -87,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Provider">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Provider">
+      <EntityTypeMapping TypeName="Model.Provider">
         <MappingFragment StoreEntitySet="Provider">
           <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
           <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
@@ -95,7 +93,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Role">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Role">
+      <EntityTypeMapping TypeName="Model.Role">
         <MappingFragment StoreEntitySet="Role">
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -103,7 +101,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Status">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Status">
+      <EntityTypeMapping TypeName="Model.Status">
         <MappingFragment StoreEntitySet="Status">
           <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           <ScalarProperty Name="StatusName" ColumnName="StatusName" />
@@ -111,7 +109,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Street">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Street">
+      <EntityTypeMapping TypeName="Model.Street">
         <MappingFragment StoreEntitySet="Street">
           <ScalarProperty Name="StreetID" ColumnName="StreetID" />
           <ScalarProperty Name="StreetName" ColumnName="StreetName" />
@@ -119,7 +117,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -130,16 +128,26 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tovar">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.Tovar">
+      <EntityTypeMapping TypeName="Model.Tovar">
         <MappingFragment StoreEntitySet="Tovar">
           <ScalarProperty Name="TovarID" ColumnName="TovarID" />
           <ScalarProperty Name="TovarName" ColumnName="TovarName" />
+          <ScalarProperty Name="TovarManufacturer" ColumnName="TovarManufacturer" />
+          <ScalarProperty Name="TovarProvider" ColumnName="TovarProvider" />
           <ScalarProperty Name="TovarDescription" ColumnName="TovarDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TovarOfName">
+      <EntityTypeMapping TypeName="Model.TovarOfName">
+        <MappingFragment StoreEntitySet="TovarOfName">
+          <ScalarProperty Name="TovarNameID" ColumnName="TovarNameID" />
+          <ScalarProperty Name="TovarOfName1" ColumnName="TovarOfName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="User">
-      <EntityTypeMapping TypeName="TradeIS_33BerzegovModel.User">
+      <EntityTypeMapping TypeName="Model.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="UserInfo" ColumnName="UserInfo" />
@@ -149,7 +157,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="OrderProduct" TypeName="TradeIS_33BerzegovModel.OrderProduct" StoreEntitySet="OrderProduct">
+    <AssociationSetMapping Name="OrderProduct" TypeName="Model.OrderProduct" StoreEntitySet="OrderProduct">
       <EndProperty Name="Order">
         <ScalarProperty Name="OrderID" ColumnName="OrderID" />
       </EndProperty>
